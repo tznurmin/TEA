@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "TEA"
+version = "2025.2.1"
+authors = [
+    { name = "Toni Nurminen" }
+]
+description = "Taxonomic Entity Augmentation"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+
+[tool.setuptools]
+include-package-data = true
+packages = ["tea", "tea.data"]
+
+
+[tool.setuptools.package-data]
+"tea.data" = ["species.txt", "attribution.txt"]
