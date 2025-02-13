@@ -17,11 +17,11 @@ cd TEA
 pip install .
 ```
 
-# Usage
+# Quickstart
 
 The package provides two general text augmentation strategies. 
 
-To only switch species:
+To switch species:
 ```python
 from transformers import AutoTokenizer
 from tea import TEA
@@ -33,7 +33,7 @@ tea.switch('Hello E. coli!')
 # => 'Hello D. cephalotes!'
 ```
 
-To scramble the strains you will also need to provide a list of strains:
+To scramble strains:
 ```python
 from transformers import AutoTokenizer
 from tea import TEA
@@ -48,3 +48,7 @@ tea.scramble('E. coli strain HB101 is a handy laboratory strain for molecular bi
 tea.scramble('E. coli strain HB101 is a handy laboratory strain for molecular biology laboratory work.', ['strain HB101'])
 # => 'E. coli strain SW565 is a handy laboratory strain for molecular biology.'
 ```
+
+# Dataset generation
+
+An example script (gen_strategy.py) is provided for example usage of TEA as part of a more advanced dataset generation pipeline. The example script assumes that [TEA_curated_data](https://github.com/tznurmin/TEA_curated_data) is cloned into the same directory.
