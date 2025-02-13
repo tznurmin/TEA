@@ -51,4 +51,4 @@ tea.scramble('E. coli strain HB101 is a handy laboratory strain for molecular bi
 
 # Dataset generation
 
-An example script (gen_strategy.py) is provided for example usage of TEA as part of a more advanced dataset generation pipeline. The example script assumes that [TEA_curated_data](https://github.com/tznurmin/TEA_curated_data) is cloned into the same directory.
+A script (gen_strategy.py) is provided for example usage of TEA as part of a more advanced dataset generation pipeline. The example script assumes that [TEA_curated_data](https://github.com/tznurmin/TEA_curated_data) is cloned into the same directory where it is run.
