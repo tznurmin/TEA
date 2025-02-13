@@ -4,14 +4,47 @@ TEA is a text augmentation tool that helps prevent machine learning models from 
 
 # Installation
 
-Hugging Face library compatible tokenizer is currently the only dependency.
+You will need a Hugging Face library compatible tokenizer. You can install Transformers package from Hugging Face, which includes the required dependency. Run the following to do this:
 
 ```bash
 pip install transformers
 ```
 
-Clone this repository and run the following to install TEA:
+Next, clone this repository and run the following to install TEA as a Python package:
 
 ```bash
+cd TEA
 pip install .
+```
+
+# Usage
+
+The package provides two general text augmentation strategies. 
+
+To only switch species:
+```python
+from transformers import AutoTokenizer
+from tea import TEA
+
+tokenizer = AutoTokenizer.from_pretrained('dmis-lab/biobert-base-cased-v1.2', do_lower_case=False, model_max_length=100000)
+tea = TEA(tokenizer)
+
+tea.switch('Hello E. coli!')
+# => 'Hello D. cephalotes!'
+```
+
+To scramble the strains you will also need to provide a list of strains:
+```python
+from transformers import AutoTokenizer
+from tea import TEA
+
+tokenizer = AutoTokenizer.from_pretrained('dmis-lab/biobert-base-cased-v1.2', do_lower_case=False, model_max_length=100000)
+tea = TEA(tokenizer)
+
+tea.scramble('E. coli strain HB101 is a handy laboratory strain for molecular biology laboratory work.', ['HB101'])
+# => 'E. coli strain FQ414 is a handy laboratory strain for molecular biology.'
+
+# this also works
+tea.scramble('E. coli strain HB101 is a handy laboratory strain for molecular biology laboratory work.', ['strain HB101'])
+# => 'E. coli strain SW565 is a handy laboratory strain for molecular biology.'
 ```
