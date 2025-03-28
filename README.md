@@ -2,6 +2,8 @@
 
 TEA is a text augmentation tool that helps prevent machine learning models from overfitting to important but repetitive content in NLP examples that use biological texts as source material. TEA targets taxonomic species names and strain names by either switching them into other valid taxonomic names automatically or by scrambling defined strain names from the text.
 
+To see TEA in action, refer to [TEA_ft](https://github.com/tznurmin/TEA_ft) repository.
+
 # Installation
 
 You will need a Hugging Face library compatible tokenizer. You can install Transformers package from Hugging Face, which includes the required dependency. Run the following to do this:
